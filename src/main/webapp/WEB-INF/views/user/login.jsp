@@ -5,12 +5,14 @@
 <body class="hold-transition login-page"> 
 <div class="login-box"> 
 <div class="login-logo"> 
-<a href="${path}/"><b>Admin</b>LTE</a> 
+<!-- 
+<a href="${path}/"><b>OpenSource Solution</b> Team</a> 
+ -->
 </div> 
 <!-- /.login-logo --> 
 <div class="card"> 
 <div class="card-body login-card-body"> 
-<p class="login-box-msg">Sign in to start your session</p> 
+<p class="login-box-msg"><b>OpenSource Solution</b> Team</p> 
 <form action="${path}/user/loginPost" method="post"> 
 <div class="input-group mb-3"> 
 <input type="text" name="userId" class="form-control" placeholder="아아디"> 
@@ -32,20 +34,20 @@
 <div class="col-8"> 
 <div class="icheck-primary"> 
 <input type="checkbox" id="remember"> 
-<label for="remember"> Remember Me </label> 
+<label for="remember"> 나를 기억해 </label> 
 </div> 
 </div> 
 <!-- /.col --> 
 <div class="col-4"> 
-<button type="submit" class="btn btn-primary btn-block">Sign In</button> 
+<button type="submit" class="btn btn-primary btn-block">가 입</button> 
 </div> 
 <!-- /.col --> 
 </div> 
 </form> 
 <p class="mb-1"> 
-<a href="#">I forgot my password</a> </p> 
+<a href="#">패스워드를 잃어 버렸니?</a> </p> 
 <p class="mb-0"> 
-<a href="${path}/user/register" class="text-center">Register a new membership</a> 
+<a href="${path}/user/register" class="text-center">회원가입</a> 
 </p> 
 </div> 
 <!-- /.login-card-body --> 
