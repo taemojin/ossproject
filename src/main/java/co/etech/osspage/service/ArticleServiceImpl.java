@@ -6,6 +6,7 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
+import co.etech.osspage.commons.paging.Criteria;
 import co.etech.osspage.domain.ArticleVO;
 import co.etech.osspage.persistence.ArticleDAO;
 
@@ -42,5 +43,10 @@ public class ArticleServiceImpl implements ArticleService {
     @Override
     public List<ArticleVO> listAll() throws Exception {
         return articleDAO.listAll();
+    }
+    
+    @Override
+    public List<ArticleVO> listCriteria(Criteria criteria) throws Exception {
+        return articleDAO.listCriteria(criteria);
     }
 }

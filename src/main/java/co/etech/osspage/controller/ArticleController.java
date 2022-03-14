@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import co.etech.osspage.commons.paging.Criteria;
+import co.etech.osspage.commons.paging.PageMaker;
 import co.etech.osspage.domain.ArticleVO;
 import co.etech.osspage.service.ArticleService;
 
@@ -103,5 +105,26 @@ public class ArticleController {
         redirectAttributes.addFlashAttribute("msg", "delSuccess");
 
         return "redirect:/article/list";
+    }
+    
+    @RequestMapping(value = "/listCriteria", method = RequestMethod.GET)
+    public String listCriteria(Model model, Criteria criteria) throws Exception {
+        logger.info("listCriteria ...");
+        model.addAttribute("articles", articleService.listCriteria(criteria));
+        return "/article/list_criteria";
+    }
+    
+    @RequestMapping(value = "/listPaging", method = RequestMethod.GET)
+    public String listPaging(Model model, Criteria criteria) throws Exception {
+        logger.info("listPaging ...");
+
+        PageMaker pageMaker = new PageMaker();
+        pageMaker.setCriteria(criteria);
+        pageMaker.setTotalCount(1000);
+
+        model.addAttribute("articles", articleService.listCriteria(criteria));
+        model.addAttribute("pageMaker", pageMaker);
+
+        return "/article/list_paging";
     }
 }    

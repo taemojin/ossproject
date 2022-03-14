@@ -2,6 +2,7 @@ package co.etech.osspage.persistence;
 
 import java.util.List;
 
+import co.etech.osspage.commons.paging.Criteria;
 import co.etech.osspage.domain.ArticleVO;
 
 public interface ArticleDAO {
@@ -15,5 +16,9 @@ public interface ArticleDAO {
     void delete(Integer article_no) throws Exception;
 
     List<ArticleVO> listAll() throws Exception;
+    
+    List<ArticleVO> listPaging(int page) throws Exception;
+    
+    List<ArticleVO> listCriteria(Criteria criteria) throws Exception;
 
 }

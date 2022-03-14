@@ -2,6 +2,7 @@ package co.etech.osspage.service;
 
 import java.util.List;
 
+import co.etech.osspage.commons.paging.Criteria;
 import co.etech.osspage.domain.ArticleVO;
 
 public interface ArticleService {
@@ -15,5 +16,7 @@ public interface ArticleService {
     void delete(Integer article_no) throws Exception;
 
     List<ArticleVO> listAll() throws Exception;
+    
+    List<ArticleVO> listCriteria(Criteria criteria) throws Exception;
 
 }
