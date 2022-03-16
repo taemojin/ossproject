@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import co.etech.osspage.commons.paging.Criteria;
+import co.etech.osspage.commons.paging.SearchCriteria;
 import co.etech.osspage.domain.ArticleVO;
 
 @Repository
@@ -67,5 +68,15 @@ public class ArticleDAOImpl implements ArticleDAO {
     @Override
     public int countArticles(Criteria criteria) throws Exception {
         return sqlSession.selectOne(NAMESPACE + ".countArticles", criteria);
+    }
+    
+    @Override
+    public List<ArticleVO> listSearch(SearchCriteria searchCriteria) throws Exception {
+        return sqlSession.selectList(NAMESPACE + ".listSearch", searchCriteria);
+    }
+
+    @Override
+    public int countSearchedArticles(SearchCriteria searchCriteria) throws Exception {
+        return sqlSession.selectOne(NAMESPACE + ".countSearchedArticles", searchCriteria);
     }
 }

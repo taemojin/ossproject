@@ -3,6 +3,7 @@ package co.etech.osspage.persistence;
 import java.util.List;
 
 import co.etech.osspage.commons.paging.Criteria;
+import co.etech.osspage.commons.paging.SearchCriteria;
 import co.etech.osspage.domain.ArticleVO;
 
 public interface ArticleDAO {
@@ -22,5 +23,9 @@ public interface ArticleDAO {
     List<ArticleVO> listCriteria(Criteria criteria) throws Exception;
     
     int countArticles(Criteria criteria) throws Exception;
+    
+    List<ArticleVO> listSearch(SearchCriteria searchCriteria) throws Exception;
+    
+    int countSearchedArticles(SearchCriteria searchCriteria) throws Exception;
 
 }

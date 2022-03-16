@@ -5,13 +5,13 @@ This is a starter template page. Use this page to start your new project from
 scratch. This page gets rid of all links and provides the needed markup only.
 -->
 <html lang="en">
-<%@ include file = "../include/head.jsp" %>
+<%@ include file = "../../include/head.jsp" %>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
-<%@ include file = "../include/main_header.jsp" %>
+<%@ include file = "../../include/main_header.jsp" %>
 
   <!-- Main Sidebar Container -->
-<%@ include file = "../include/left_column.jsp" %>
+<%@ include file = "../../include/left_column.jsp" %>
 
 <script>
 var result = "${msg}";
@@ -22,6 +22,25 @@ if (result == "regSuccess") {
 } else if (result == "delSuccess") {
     alert("게시글 삭제가 완료되었습니다.");
 }
+</script>
+<script>
+$(document).ready(function () {
+	var result = "${msg}";
+	if (result == "regSuccess") {
+	    alert("게시글 등록이 완료되었습니다.");
+	} else if (result == "modSuccess") {
+	    alert("게시글 수정이 완료되었습니다.");
+	} else if (result == "delSuccess") {
+	    alert("게시글 삭제가 완료되었습니다.");
+	}
+	
+    $("#searchBtn").on("click", function (event) {
+        self.location =
+            "${path}/article/paging/search/list${pageMaker.makeQuery(1)}"
+            + "&searchType=" + $("select option:selected").val()
+            + "&keyword=" + encodeURIComponent($("#keywordInput").val());
+    });
+});
 </script>
 
   <!-- Content Wrapper. Contains page content -->
@@ -108,6 +127,28 @@ if (result == "regSuccess") {
             </ul>
           </nav>
         </div>
+        <div class="card-footer">
+    <div class="text-center">
+        <ul class="pagination">
+            <c:if test="${pageMaker.prev}">
+                <li><a href="${path}/article/paging/search/list${pageMaker.makeSearch(pageMaker.startPage - 1)}">이전</a></li>
+            </c:if>
+            <c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
+                <li <c:out value="${pageMaker.criteria.page == idx ? 'class=active' : ''}"/>>
+                    <a href="${path}/article/paging/search/list${pageMaker.makeSearch(idx)}">${idx}</a>
+                </li>
+            </c:forEach>
+            <c:if test="${pageMaker.next && pageMaker.endPage > 0}">
+                <li><a href="${path}/article/paging/search/list?${pageMaker.makeSearch(pageMaker.endPage + 1)}">다음</a></li>
+            </c:if>
+        </ul>
+    </div>
+</div>
+<td>
+  <a href="${path}/article/paging/search/read${pageMaker.makeSearch(pageMaker.criteria.page)}&articleNo=${article.articleNo}">
+    ${article.title}
+  </a>
+</td>
       </div>
     </div>
   </div><!-- /.container-fluid -->
@@ -127,12 +168,12 @@ if (result == "regSuccess") {
   <!-- /.control-sidebar -->
 
   <!-- Main Footer -->
-<%@ include file = "../include/main_footer.jsp" %>
+<%@ include file = "../../include/main_footer.jsp" %>
 </div>
 <!-- ./wrapper -->
 
 <!-- REQUIRED SCRIPTS -->
-<%@ include file = "../include/plugin_js.jsp" %>
+<%@ include file = "../../include/plugin_js.jsp" %>
   <script type="text/javascript" src="<c:url value='/dist/js/article-read.js'/>"></script>
 </body>
 </html>
