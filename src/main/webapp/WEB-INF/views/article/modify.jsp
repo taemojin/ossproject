@@ -13,6 +13,27 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Main Sidebar Container -->
 <%@ include file = "../include/left_column.jsp" %>
 
+<script>
+$(document).ready(function () {
+
+    var formObj = $("form[role='form']");
+    console.log(formObj);
+
+    $(".modBtn").on("click", function () {
+        formObj.submit();
+    });
+
+    $(".cancelBtn").on("click", function () {
+        history.go(-1);
+    });
+
+    $(".listBtn").on("click", function () {
+        self.location = "${path}/article/list"
+    });
+
+});
+</script>
+
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->

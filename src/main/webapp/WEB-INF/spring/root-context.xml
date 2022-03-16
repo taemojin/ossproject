@@ -10,7 +10,10 @@
 	<!-- Root Context: defines shared resources visible to all other web components -->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"> 
     <property name="driverClassName" value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"/> 
+    <!-- 
     <property name="url" value="jdbc:log4jdbc:mysql://172.16.80.112:3306/ossbook?serverTimezone=UTC&amp;useSSL=false"/> 
+     -->
+    <property name="url" value="jdbc:log4jdbc:mysql://localhost:3306/ossbook?serverTimezone=UTC&amp;useSSL=false"/> 
     <property name="username" value="root" /> 
     <property name="password" value="redhat" />  
     </bean>

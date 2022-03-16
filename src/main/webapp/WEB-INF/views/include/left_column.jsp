@@ -49,7 +49,7 @@
               <li class="nav-item"> 
                <a href="${path}/article/listPaging" class="nav-link"> 
                 <i class="far fa-circle nav-icon"></i> 
-                <p>List Paging Page</p> 
+                <p>리스트 페이징 버튼</p> 
                </a> 
               </li> 
               <!-- ------------------------- -->
