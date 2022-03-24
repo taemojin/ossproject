@@ -14,12 +14,23 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry including="**/*.java" kind="src" output="target/test-classes" path="src/test/resources"/>
+<<<<<<< HEAD
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+=======
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6">
+		<attributes>
+			<attribute name="module" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+>>>>>>> e0c91eac3a5bd20c23b735f0fc19f3172902b298
 	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/ASUS/Downloads/commons-dbcp2-2.9.0-bin/commons-dbcp2-2.9.0/commons-dbcp2-2.9.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/ASUS/Downloads/commons-dbcp2-2.9.0-bin/commons-dbcp2-2.9.0/commons-dbcp2-2.9.0-javadoc.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
