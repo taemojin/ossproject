@@ -47,7 +47,7 @@
               </li>
               <!-- List Paging 목록 버튼 추가 --> 
               <li class="nav-item"> 
-               <a href="${path}/article/paging/list" class="nav-link"> 
+               <a href="${path}/article/paging/search/list" class="nav-link"> 
                 <i class="far fa-circle nav-icon"></i> 
                 <p>리스트 페이징 버튼</p> 
                </a> 

@@ -34,6 +34,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- /.content-header -->
 
     <!-- Main content -->
+<!-- 
     <div class="content">
       <div class="container-fluid">
         <div class="row">
@@ -63,9 +64,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <a href="#" class="card-link">Card link</a>
                 <a href="#" class="card-link">Another link</a>
               </div>
-            </div><!-- /.card -->
+            </div>
           </div>
-          <!-- /.col-md-6 -->
+     
           <div class="col-lg-6">
             <div class="card">
               <div class="card-header">
@@ -91,13 +92,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </div>
             </div>
           </div>
-          <!-- /.col-md-6 -->
+
         </div>
-        <!-- /.row -->
-      </div><!-- /.container-fluid -->
+
+      </div>
     </div>
-    <!-- /.content -->
+   -->
   </div>
+  
+
   <!-- /.content-wrapper -->
 
   <!-- Control Sidebar -->

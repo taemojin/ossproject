@@ -13,6 +13,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Main Sidebar Container -->
 <%@ include file = "../../include/left_column.jsp" %>
 
+<script src=${path}/ckeditor/ckeditor.js"></script>
+
+
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -32,7 +35,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
 				<div class="form-group"> 
 					<label for="content">내용</label> 
 					<textarea class="form-control" id="content" name="content" rows="30" placeholder="내용을 입력해주세요" style="resize: none;"></textarea> 
+				<script>
+//id가 description인 태그에 ckeditor를 적용시킴
+CKEDITOR.replace("content"); //이미지 업로드 안됨
+</script>        
+
 				</div> 
+
 				<div class="form-group"> 
 					<label for="writer">작성자</label> 
 					<input class="form-control" id="writer" name="writer"> 
